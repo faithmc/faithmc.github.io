@@ -16,7 +16,8 @@
   <link rel="stylesheet" href="./assets/basic.css">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">  
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
+  
   <style media="screen">
 
   </style>
@@ -50,7 +51,12 @@
 
     <hr><br>  
     
-    <div>        
+    <div>  
+      
+      <a href="https://ifttt.com/applets/449114p-faith-methodist-8am-ebulletin">          
+        <button type="button" class="btn btn-outline-dark">e-pamplet for 8am</button>
+      </a>
+
       <a href="http://www.faithmc.sg/Files/eBulletin/Bulletin8am.pdf">          
         <button type="button" class="btn btn-outline-dark">8am pamplet</button>
       </a>
@@ -60,10 +66,23 @@
       </a>
       
       <a href="https://www.google.com.sg/maps/dir//400+Commonwealth+Dr,+Faith+Methodist+Church,+Singapore+149604/@1.3027305,103.7950318,17z/data=!4m15!1m6!3m5!1s0x31da1a4745c1dd6b:0x4e0ff2ede4162e38!2sFaith+Methodist+Church!8m2!3d1.3027305!4d103.7972205!4m7!1m0!1m5!1m1!1s0x31da1a4745c1dd6b:0x4e0ff2ede4162e38!2m2!1d103.7972205!2d1.3027305">          
-        <button type="button" class="btn btn-outline-dark">Direction to Church</button>
+        <button data-value="https://www.google.com.sg/maps/dir//400+Commonwealth+Dr,+Faith+Methodist+Church,+Singapore+149604/@1.3027305,103.7950318,17z/data=!4m15!1m6!3m5!1s0x31da1a4745c1dd6b:0x4e0ff2ede4162e38!2sFaith+Methodist+Church!8m2!3d1.3027305!4d103.7972205!4m7!1m0!1m5!1m1!1s0x31da1a4745c1dd6b:0x4e0ff2ede4162e38!2m2!1d103.7972205!2d1.3027305" id="direction" type="button"  class="btn btn-outline-dark">Direction to Church</button>
       </a>
     </div>
 
   </div>
 </header><!-- /.site__header -->
+
+
+<script>
+  function loadClipBoard() {
+    new Clipboard('.btn', {
+        text: function(trigger) {
+            return trigger.parentElement.getAttribute('href');
+        }
+    });
+  }
+
+  window.onload = loadClipBoard();
+</script>
 
